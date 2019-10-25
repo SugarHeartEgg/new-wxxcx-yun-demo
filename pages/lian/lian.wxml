@@ -1,0 +1,2 @@
+<button bindtap="getUseid">获取用户opId</button>
+<text>用户opID:{{opId}}</text>

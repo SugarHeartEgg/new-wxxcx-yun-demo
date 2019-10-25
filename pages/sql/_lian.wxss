@@ -1,0 +1,60 @@
+.input-box {
+  height: 300rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.button-box {
+  margin-top: 30rpx;
+}
+
+.history-table-wrap {
+  margin-top: 40rpx;
+  display: flex;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* 表格代码   */
+.table {
+  border: 1px solid #dadada;
+  border: 0;
+  width: 98%;
+  margin: 0 1%;
+}
+
+.tr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.th,
+.td {
+  padding: 10px;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  text-align: center;
+  width: 100%;
+}
+
+.th1,
+.th2,
+.td1,
+.td2 {
+  /* width: 40%; */
+}
+
+.th {
+  font-weight: 800;
+  background-color: lightpink;
+  font-size: 35rpx;
+  color: #330e0e;
+}
+
+.td {
+  font-size: 30rpx;
+  color: #000;
+}
