@@ -1,6 +1,7 @@
 // 1. 获取数据库引用
 const DB = wx.cloud.database().collection("_Lian")
 let id = ""
+let constellation = ""
 
 Page({
   data: {
@@ -8,7 +9,9 @@ Page({
     age: "",
     constellation: "",
     hobby: "",
-    newData: []
+    newData: [],
+    oldId: id,
+    oldConstellation: constellation
   },
   // 清空
   clear(callback) {
@@ -16,7 +19,9 @@ Page({
       name: "",
       age: "",
       constellation: "",
-      hobby: ""
+      hobby: "",
+      oldId: "",
+      oldConstellation: ""
     }, () => {
       callback && callback()
     })
@@ -45,10 +50,19 @@ Page({
       hobby: event.detail.value
     })
   },
+  // updateInp
+  upInp: function (event) {
+    id = event.detail.value
+  },
+  // 需要修改的数据
+  updatConstellation: function (event) {
+    constellation = event.detail.value
+  },
   // 要删除的DataID
   delInput: function (event) {
     id = event.detail.value
   },
+  // 网络请求
   addDataList: function () {
     if (this.data.name && this.data.age && this.data.constellation && this.data.name && this.data.hobby) {
       let that = this
@@ -115,7 +129,28 @@ Page({
     })
   },
   modifyDataList: function () {
-
+    let _this = this
+    DB.doc(id).update({
+      data: {
+        constellation: constellation
+      },
+      success(res) {
+        console.log("修改成功", res);
+        wx.showToast({
+          title: '修改成功',
+          icon: 'success',
+          duration: 2000
+        })
+        setTimeout(function () {
+          wx.hideToast()
+        }, 2000)
+        _this.clear()
+        _this.getDataList()
+      },
+      fail(res) {
+        console.log("修改失败", res);
+      }
+    })
   },
   deleteDataList: function () {
     DB.doc(id).remove({
@@ -132,7 +167,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let _this = this
+    _this.getDataList()
   },
 
   /**
@@ -146,7 +182,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let _this = this
+    _this.getDataList()
   },
 
   /**

@@ -4,27 +4,16 @@
   <input placeholder="请输入您的星座" type="text" value="{{constellation}}" bindinput="ctnInp"></input>
   <input placeholder="请输入您的爱好" type="text" value="{{hobby}}" bindinput="loveInp"></input>
   <input placeholder="请输入所要删除的数据ID" type="text" bindinput="delInput"></input>
+  <!-- 修改 -->
+  <input placeholder="请输入所要修改的数据ID" type="text" value="{{oldId}}" bindinput="upInp"></input>
+  <input placeholder="请输入所要修改的星座" type="text" value="{{oldConstellation}}" bindinput="updatConstellation"></input>
 </view>
 <view class="button-box">
-  <button bindtap="addDataList">添加到数据库</button>
-  <button bindtap="getDataList">查询数据库Data</button>
-  <button bindtap="modifyDataList">修改数据库Data</button>
-  <button bindtap="deleteDataList">删除数据库Data</button>
+  <button bindtap="addDataList" type="primary">增加数据库Data</button>
+  <button bindtap="deleteDataList" type="warn">删除数据库Data</button>
+  <button bindtap="modifyDataList" type="primary">修改数据库Data</button>
+  <button bindtap="getDataList" type="primary">查询数据库Data</button>
 </view>
-<!-- <view class="_lian-box">
-  <view>姓名</view>
-  <view>年龄</view>
-  <view>星座</view>
-  <view>爱好</view>
-</view>
-<block wx:for="{{newData}}" wx:key="{{index}}" wx:if="{{newData}}">
-  <view class="_lian-son">
-    <view>{{item.name}}</view>
-    <view>{{item.age}}</view>
-    <view>{{item.constellation}}</view>
-    <view>{{item.hobby}}</view>
-  </view>
-</block> -->
 <view class='history-table-wrap'>
   <view class="table">
     <view class="tr">

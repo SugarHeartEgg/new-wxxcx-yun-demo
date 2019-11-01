@@ -1,0 +1,10 @@
+<button type="primary" bindtap="addAorB">云函数加法</button>
+<!-- openId -->
+<button type="primary" bindtap="getopenId">获取openId</button>
+<!-- API获取数据库Data -->
+<button type="primary" bindtap="getData">数据库API获取data</button>
+<!-- 云函数获取数据库Data -->
+<button type="primary" bindtap="getYunData">云函数获取数据库data</button>
+<!-- 上传文件 -->
+<button type="primary" bindtap="uploadYun">上传文件</button>
+<image src="{{imgUrl}}"></image>

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/newYun/new-yun",
     "pages/sql/_lian",
     "pages/lian/lian",
     "pages/index/index",

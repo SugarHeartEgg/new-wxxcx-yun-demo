@@ -19,10 +19,10 @@
 
 /* 表格代码   */
 .table {
-  border: 1px solid #dadada;
-  border: 0;
+  border: 1rpx solid #dadada;
+  /* border: 0; */
   width: 98%;
-  margin: 0 1%;
+  margin: 1%;
 }
 
 .tr {
@@ -33,9 +33,9 @@
 
 .th,
 .td {
-  padding: 10px;
-  border-bottom: 1px solid #dadada;
-  border-right: 1px solid #dadada;
+  padding: 10rpx;
+  border-bottom: 1rpx solid #dadada;
+  border-right: 1rpx solid #dadada;
   text-align: center;
   width: 100%;
 }
@@ -50,7 +50,7 @@
 .th {
   font-weight: 800;
   background-color: lightpink;
-  font-size: 35rpx;
+  font-size: 30rpx;
   color: #330e0e;
 }
 
